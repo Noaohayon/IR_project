@@ -1,12 +1,14 @@
 # IR_project
 
-List of files:
-index_dict_creation.ipynb - this file contains all the creation of our indexes and dictionaries converted into pickles. For the text index we calculated additional dictionaries such as document length.
-backend_search.py - this file containes some of the helper functions we used for our main search function in the file 'search_frontend.py'.
-inverted_index_gcp.py - this file containes the InvertedIndex class that keeps the global dictionaries of our index. in addition to that it containes the classes MultiFileWriter and MultiFileReader that write/read to/from to the memory.
-search_frontend.py - this file containes all of the search functions we created.
+*List of files:*
+1. index_dict_creation.ipynb - this file contains all the creation of our indexes and dictionaries converted into pickles. For the text index we calculated additional dictionaries such as document length.
+2. backend_search.py - this file containes some of the helper functions we used for our main search function in the file 'search_frontend.py'.
+3. inverted_index_gcp.py - this file containes the InvertedIndex class that keeps the global dictionaries of our index. in addition to that it containes the classes MultiFileWriter and MultiFileReader that write/read to/from to the memory.
+4. search_frontend.py - this file containes all of the search functions we created.
 
-The main search function:
+
+*The main search function:*
+
 In our main search function the data from out index moves throw several stages until we reach a final list of documents that we return.
 
 The first step in our function is tokenizing the query and removeing stopwords/ terms that are not in our index.
