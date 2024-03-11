@@ -16,7 +16,6 @@ import gcsfs
 
 
 
-
 # Let's start with a small block size of 30 bytes just to test things out.
 
 client = storage.Client()
@@ -27,7 +26,7 @@ BLOCK_SIZE = 1999998
 class MultiFileWriter:
     """ Sequential binary writer to multiple files of up to BLOCK_SIZE each. """
 
-    def __init__(self, base_dir, name, bucket_name,folder_name):
+    def __init__(self, base_dir, name, bucket_name, folder_name):
         self._base_dir = Path(base_dir)
         self._name = name
         self._file_gen = (open(self._base_dir / f'{name}_{i:03}.bin', 'wb')
@@ -73,7 +72,7 @@ class MultiFileReader:
     def __init__(self, bucket_name,folder_name):
         self.bucket_name = bucket_name
         self._open_files = {}
-        self._folder_name=folder_name
+        self._folder_name = folder_name
 
     def read(self, locs, n_bytes, bucket_name):
         b = []

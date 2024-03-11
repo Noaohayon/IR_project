@@ -1,12 +1,12 @@
 from flask import Flask, request, jsonify
-import backend_search
+from backend_search import *
 class MyFlaskApp(Flask):
     def run(self, host=None, port=None, debug=None, **options):
         super(MyFlaskApp, self).run(host=host, port=port, debug=debug, **options)
 
 app = MyFlaskApp(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
-app.run(host='0.0.0.0', port=8080, debug=True, use_reloader=False)
+# app.run(host='0.0.0.0', port=8080, debug=True, use_reloader=False)
 
 @app.route("/search")
 def search():
