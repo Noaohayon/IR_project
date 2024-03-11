@@ -13,8 +13,8 @@ In our main search function the data from out index moves throw several stages u
 
 The first step in our function is tokenizing the query and removeing stopwords/ terms that are not in our index.
 we determined weigths for our combine function. 
-If the query is only one word we give a higher weight to the title and if the query is longer than a word we give a higher weigth to the text of the document.
-We calculate similarity between the text of the document and the query using inner product and the weigths are tf-idf. We return from the function only the documents that their similarity score is the highest.
+If the query contains more than one word, the weight between the title and the text will be 60-40 respectively, otherwise, we will increase the weight of the title.
+We calculate similarity between the text of the document and the query using BM25. We return from the function only the documents that their similarity score is the highest.
 We calculate the similarity between the query and the document's title using inner product similarity.
 We use a combine function to merge the results of the similarity with the title and the text according to the weigths we determined. We return from the function only the documents that their merged scores are the top 50.
 We map between the doc id and the Title of the document and return a tuples list.
